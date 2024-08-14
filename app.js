@@ -1,6 +1,6 @@
-const vw = window.innerWidth;
-const vh = window.innerHeight;
-const timeline = gsap.timeline();
+const fullWidth = window.innerWidth;
+const fullHeight = window.innerHeight;
+const timeline = gsap.timeline({repeat:-1});
 
 timeline.from('.red', {
     x: -200,
@@ -20,7 +20,7 @@ timeline.from('.red', {
   });
   
 timeline.to('.red', {
-      x: vw - 200,
+      x: fullWidth - 200,
       y: 0, 
       borderRadius: "50%",
       backgroundColor: "green",
@@ -28,13 +28,13 @@ timeline.to('.red', {
   })
   .to('.green', {
       x: 0, 
-      y: vh - 200, 
+      y: fullHeight - 200, 
       borderRadius: "50%",
       backgroundColor: "blue",
       duration: 1,
   }, "<")
   .to('.blue', {
-      x: -vw + 200, 
+      x: -fullWidth + 200, 
       y: 0,
       borderRadius: "50%",
       backgroundColor: "yellow",
@@ -42,7 +42,7 @@ timeline.to('.red', {
   }, "<")
   .to('.yellow', {
       x: 0,
-      y: -vh + 200,
+      y: -fullHeight + 200,
       borderRadius: "50%",
       backgroundColor: "red",
       duration: 1,
